@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <script>
+    function getComputerChoice(){
+        let choice = Math.floor(Math.random() * 3);
+        if(choice==0){
+            return 'ROCK';
+        }if(choice==1){
+            return 'PAPER';
+        }if(choice==2){
+            return 'SCISSORS';
+        }
+    }
+
+    function playRound(playerSelection, computerSelection){
+        if (playerSelection === computerSelection) {
+            console.log('TIE');
+        }
+        if (
+            (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+            (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') ||
+            (playerSelection === 'PAPER' && computerSelection === 'ROCK')
+        ) {
+            playerScore++;
+            console.log('Player Score:' + playerScore);
+        }
+        if (
+            (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') ||
+            (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') ||
+            (computerSelection === 'PAPER' && playerSelection === 'ROCK')
+        ) {
+            computerScore++;
+            console.log('Computer Score:' + computerScore);
+        }
+    }
+
+    function game(){
+        while(!isGameOver(playerScore, computerScore)){
+            playerSelection=prompt("Rock, Paper, or Scissors?");
+            playerSelection=playerSelection.toUpperCase();
+            playRound(playerSelection,getComputerChoice());
+        }
+    }
+
+    function isGameOver(pScore, cScore){
+        if(pScore == 5){
+            console.log('PLAYER WINS THE GAME');
+            return true;
+        }else if(cScore == 5){
+            console.log('COMPUTER WINS THE GAME');
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    let computerScore = 0;
+    let playerScore = 0;
+    let playerSelection = '';
+    let computerSelection = '';
+
+    console.log(game());
+
+    </script>
+    
+</body>
+</html>
