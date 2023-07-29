@@ -120,7 +120,7 @@ h3{
     font-weight: 800;
 }
 
-.test{
+.center-the-button{
     display: flex;
     justify-content: center;
 }

@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection){
             (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') ||
             (playerSelection === 'PAPER' && computerSelection === 'ROCK')
         ) {
-            playerScore++;
+            playerScore=playerScore+1;
             matchResult.textContent = "You won!";
             matchResult.style.cssText='color: green;';
 
@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection){
             (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') ||
             (computerSelection === 'PAPER' && playerSelection === 'ROCK')
         ) {
-            computerScore++;
+            computerScore=computerScore+1;
             matchResult.textContent = "You lost!";
             matchResult.style.cssText='color: red;';
 
@@ -100,8 +100,6 @@ function isGameOver(pScore, cScore){
         playAgainButton.addEventListener('click', () => {
             resetGame();
         });
-        removeButtonEvents();
-
     }else if(cScore == 5){
         console.log('COMPUTER WINS THE GAME');
         annoucement.textContent='YOU LOST :(';
@@ -111,7 +109,6 @@ function isGameOver(pScore, cScore){
         playAgainButton.addEventListener('click', () => {
             resetGame();
         });
-        removeButtonEvents();
     }
 }
 
@@ -138,22 +135,8 @@ function resetGame(){
     });
 
     annoucement.textContent='ROCK PAPER SCISSORS';
+    gameOver=false;
     enableButtonEvents();
-}
-
-function removeButtonEvents(){
-    console.log('it ran');
-    btnR.removeEventListener('click',() => {
-        playRound('ROCK', getComputerChoice());
-    });
-    btnP.removeEventListener('click', () => {
-        playRound('PAPER', getComputerChoice());
-        console.log(" no more paper");
-    });
-    btnS.removeEventListener('click', () => {
-        playRound('SCISSORS', getComputerChoice());
-        console.log(" no more scissors");
-    });
 }
 
 function enableButtonEvents(){
