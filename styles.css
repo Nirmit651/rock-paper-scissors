@@ -27,6 +27,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 }
 
 h2{
@@ -128,4 +129,10 @@ h3{
     background-color: crimson;
     padding: 10px;
     width: 100px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
