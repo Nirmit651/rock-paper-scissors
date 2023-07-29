@@ -1,0 +1,131 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(48,52,63);
+    color: rgb(255,134,0);
+}
+
+.header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(27,32,33);
+    height: 100px;
+    font-size: 30px;
+}
+
+.scoreboard{
+    color: white;
+}
+
+.scoreboard-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    margin: 16px 0;
+    font-size: 32px;
+}
+
+h3{
+    margin: 0;
+    font-size: 24px;
+}
+
+.game-info{
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+.score-box{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+.sign{
+    font-size: 100px;
+    margin: 0 32px;
+}
+
+.score{
+    font-size: 22px;
+}
+
+
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin: 16px;
+}
+
+.rock{
+    background-color: rgb(255,134,0);
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    border-style: none;
+    font-size: 100px;
+    border-radius: 10px;
+    color: black;
+}
+
+.paper{
+    background-color:rgb(255,134,0);
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    border-style: none;
+    font-size: 100px;
+    border-radius: 10px;
+    color:black;
+}
+
+.scissors{
+    background-color: rgb(255,134,0);
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    border-style: none;
+    font-size: 120px;
+    border-radius: 10px;
+    color: black;
+}
+
+#play-again-btn{
+    background-color: rgb(48,52,63);
+    color: rgb(48,52,63);
+    padding: 16px 16px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+    border-style: none;
+    margin: 16px;
+    font-weight: 800;
+}
+
+.test{
+    display: flex;
+    justify-content: center;
+}
+
+#play-again-btn.active{
+    background-color: crimson;
+    padding: 10px;
+    width: 100px;
+}

@@ -4,70 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
+    <link rel = "stylesheet" href="styles.css">
+    <script src="rps.js" defer></script>
 </head>
 <body>
-    <script>
-    function getComputerChoice(){
-        let choice = Math.floor(Math.random() * 3);
-        if(choice==0){
-            return 'ROCK';
-        }if(choice==1){
-            return 'PAPER';
-        }if(choice==2){
-            return 'SCISSORS';
-        }
-    }
 
-    function playRound(playerSelection, computerSelection){
-        if (playerSelection === computerSelection) {
-            console.log('TIE');
-        }
-        if (
-            (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
-            (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') ||
-            (playerSelection === 'PAPER' && computerSelection === 'ROCK')
-        ) {
-            playerScore++;
-            console.log('Player Score:' + playerScore);
-        }
-        if (
-            (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') ||
-            (computerSelection === 'SCISSORS' && playerSelection === 'PAPER') ||
-            (computerSelection === 'PAPER' && playerSelection === 'ROCK')
-        ) {
-            computerScore++;
-            console.log('Computer Score:' + computerScore);
-        }
-    }
+    <div class="header">
+        <h1>ROCK PAPER SCISSORS</h1>
+    </div>
 
-    function game(){
-        while(!isGameOver(playerScore, computerScore)){
-            playerSelection=prompt("Rock, Paper, or Scissors?");
-            playerSelection=playerSelection.toUpperCase();
-            playRound(playerSelection,getComputerChoice());
-        }
-    }
+    <div class="scoreboard">
+        
+        <div class="scoreboard-text">
+            <h2 id="matchResult">Choose Your Weapon!</h2>
+            <h3 id="thisBeatsThis">First to 5 Wins!</h3>
+        </div>
 
-    function isGameOver(pScore, cScore){
-        if(pScore == 5){
-            console.log('PLAYER WINS THE GAME');
-            return true;
-        }else if(cScore == 5){
-            console.log('COMPUTER WINS THE GAME');
-            return true;
-        }else{
-            return false;
-        }
-    }
+        <div class="game-info">
+            <div class="score-box">
+                <div class="sign" id="playerSign">❔</div>
+                <p class="score" id="playerScore">Player: 0</p>
+            </div>
+            <div class="score-box">
+                <div class="sign" id="computerSign">❔</div>
+                <p class="score" id="computerScore">Computer: 0</p>
+            </div>
+        </div>
 
-    let computerScore = 0;
-    let playerScore = 0;
-    let playerSelection = '';
-    let computerSelection = '';
+    </div>
 
-    console.log(game());
 
-    </script>
+    <div class="btns">
+        <button class="rock">✊</button>
+        <button class="paper">✋</button>
+        <button class="scissors">✌</button>
+    </div>
+
+    <div class="test">
+        <button id="play-again-btn">Play Again</button>
+    </div>
     
 </body>
 </html>
