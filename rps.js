@@ -136,26 +136,7 @@ function resetGame(){
 
     annoucement.textContent='ROCK PAPER SCISSORS';
     gameOver=false;
-    enableButtonEvents();
 }
-
-function enableButtonEvents(){
-    btnR.addEventListener('click', () => {
-        playRound('ROCK', getComputerChoice());
-        console.log("rock");
-    });
-        
-    btnP.addEventListener('click', () => {
-        playRound('PAPER', getComputerChoice());
-        console.log("paper");
-    });
-        
-    btnS.addEventListener('click', () => {
-        playRound('SCISSORS', getComputerChoice());
-        console.log("scissors");
-    });
-}
-
 
 let computerScore = 0;
 let playerScore = 0;
@@ -176,9 +157,19 @@ const playAgainButton = document.querySelector('#play-again-btn');
 const annoucement = document.querySelector('.header');
 
 const btnR = document.querySelector('.rock');
+btnR.addEventListener('click', () => {
+    playRound('ROCK', getComputerChoice());
+    console.log("rock");
+});
 
 const btnP = document.querySelector('.paper');
+btnP.addEventListener('click', () => {
+    playRound('PAPER', getComputerChoice());
+    console.log("paper");
+});
 
-const btnS = document.querySelector('.scissors');
-
-enableButtonEvents();
+const btnS = document.querySelector('.scissors');    
+btnS.addEventListener('click', () => {
+    playRound('SCISSORS', getComputerChoice());
+    console.log("scissors");
+});
